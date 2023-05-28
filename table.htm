@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    *{
+        margin: 0%;
+    }
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+.grid-item {
+ 
+  font-size: 14px;
+  text-align: center;
+}
+
+table td {
+            padding: 0.5rem;
+            border: 5px solid black;
+        }
+</style>
+</head>
+<body>
+
+
+<div class="grid-container">
+  <div class="grid-item">
+    <h1 style="color: red;;">Online Tour Package Reservation</h1>
+    <form id="form1">
+        <table border="2" style="background-color: #77f8aa; border-inline: solid;">
+            <tr>
+                <td>Customer Name</td>
+                <td><input id="name"type="text" placeholder="“Customer Name"></td>
+            </tr>
+
+            <tr>
+                <td>Mobile Number</td>
+                <td><input id="mobileNumber"type="number" maxlength="10" placeholder="Mobile Number"></td>
+            </tr>
+            <tr>
+                <td>Aadhar Number</td>
+                <td><input id="aadharNumber" type="number" placeholder="aadhar Number" maxlength="12"></td>
+            </tr>
+            <tr>
+                <td>Date of Check in</td>
+                <td><input id="dateOfCheckin" type="date" placeholder="dd/MM/yyyy”"></td>
+            </tr>
+            <tr>
+                <td>Package Type </td>
+                <td id="packageType">
+                    <select id="select1">
+                        
+
+                        <option id="n" value="n">1 Night & 2 Days</option>
+                        <option id="nn" value="nn">2 Nights & 3 Days</option>
+                        <option id="nnn" value="ns">3 Nights & 4 Days</option>
+                        <option id="nnnn" value="ns">4 Nights & 5 Days</option>
+                            <option id="nnnnn" value="5 Nights & 6 Days">5 Nights & 6 Days </option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Number Of Adults </td>
+                <td><input id="adults" type="number" placeholder="Enter Number of Adults"></td>
+            </tr>
+            <tr>
+                <td>Number Of Children</td>
+                <td><input id="children" type="number" placeholder="Enter Number of Children"></td>
+            </tr>
+            <tr>
+                <td>Payment Mode</td>
+                <td id="paymentMode"><input type="radio" id="radio1">
+                    <label>CC</label>&nbsp;
+                    <input type="radio" id="radio2">
+                    <label>DC</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Card Number </td>
+                <td><input type="number" id="cardNumber" placeholder="Enter Card Number"></td>
+            </tr>
+
+            <tr>
+                <td>CVV Number</td>
+                <td><input type="number" placeholder="Enter CVV" id="cvvNumber"></td>
+            </tr>
+            <tr >
+                <center>
+                   <td colspan="2"> <button onclick="display()" >Pay</button>
+                    <button ><a href="table.htm" style="text-decoration: none;">Reset</a></button>
+
+                </td>
+                </center>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p style="" id="result">
+                    
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+  </div>
+  
+  
+  
+  
+  
+  
+  <div class="grid-item">
+<form id="form2">
+    <table border="2" style="margin-top: 50px;background-color: #77f8aa;  ">
+        <tr>
+            <th>Package Type</th>
+            <th>Charges Per Type(in Rs)</th>
+            <th>Number Of visitor allowed </th>
+            <th>Extra 1 Person Charges(in Rs)</th>
+
+        </tr>
+        <tr>
+            <td>1 Night & 2 Days</td>
+            <td>11,000</td>
+            <td>2</td>
+            <td>3,000</td>
+
+        </tr>
+        <tr>
+            <td>2 Night & 3 Days</td>
+            <td>20,000</td>
+            <td>3</td>
+            <td>3,500</td>
+        </tr>
+        <tr>
+            <td>3 Night & 4 Days</td>
+            <td>29,000</td>
+            <td>3</td>
+            <td>3,500</td>
+        </tr>
+        <tr>
+            <td>4 Night & 5 Days</td>
+            <td>37,000</td>
+            <td>4</td>
+            <td>4,000</td>
+        </tr>
+        <tr>
+            <td>5 Night & 6 Days</td>
+            <td>45,000</td>
+            <td>4</td>
+            <td>4,000</td>
+        </tr>
+    </table>
+</form>
+
+  </div>
+  
+</div>
+<script>
+   
+   function display(){
+            let n=document.getElementById("n");
+            let nn=document.getElementById("nn");
+            let nnn=document.getElementById("nnn");
+            let nnnn=document.getElementById("nnnn");
+            let nnnnn=document.getElementById("nnnnn");
+            let adults=document.getElementById("adults");
+        let price=0
+        let np=0
+        if(n.selected==true){
+            price=parseInt(price+11000);
+        }
+        if(nn.selected==true){
+            price=parseInt(price+20000);
+        }
+        if(nnn.selected==true){
+            price=parseInt(price+29000);
+        }
+        if(nnnn.selected==true){
+            price=parseInt(price+37000);
+        } if(nnnnn.selected==true){
+            price=parseInt(price+45000);
+        }if(children.value>0){
+            price=price+3666;
+            price=document.getElementById("result").innerHTML="Total amount"+price+"is paid successfull.Your booking is confirmed on "+dateOfCheckin.value;
+            
+        }else{
+         price=document.getElementById("result").innerHTML="Total amount"+price+"is paid successfully.Your booking is confirmed";
+        }
+    }
+        
+</script>
+</body>
+</html>
+
+
